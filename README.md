@@ -1,90 +1,70 @@
 # Online Bookstore SQL Analysis
 
 ## Project Overview
-The Online Bookstore SQL Analysis project uses Oracle SQL to analyze bookstore sales, customer purchasing behavior, order details, and revenue. It demonstrates practical SQL skills, including joins, aggregate functions, views, indexing, query execution plans, and data validation.
+
+The **Online Bookstore SQL Analysis** project uses Oracle SQL to analyze bookstore operations, customer purchasing behavior, order details, and sales performance. The project demonstrates SQL querying, data aggregation, table relationships, indexing, query validation, and business reporting.
+
+The database contains six tables: `AUTHORS`, `GENRES`, `BOOKS`, `CUSTOMERS`, `ORDERS`, and `ORDER_DETAILS`.
 
 ## Objectives
+
 - Analyze customer orders and purchasing patterns.
-- Identify best-selling books and calculate sales revenue.
-- Analyze monthly sales performance.
-- Calculate customer spending and order summaries.
+- Calculate total revenue, units sold, and average order value.
+- Identify top-selling books and high-value customers.
+- Generate monthly sales summaries.
 - Validate stored order totals against calculated totals.
-- Explore database indexing and query execution plans.
+- Explore indexes, constraints, and query execution plans.
 
 ## Tools and Technologies
+
 - **Database:** Oracle Database
 - **SQL Environment:** Oracle SQL Developer
 - **Query Language:** SQL
+- **Concepts:** Joins, aggregate functions, subqueries, `GROUP BY`, `ORDER BY`, views, indexes, constraints, and data validation.
 
-## Database Schema
-The project contains six tables:
+## Database Structure
 
-| Table Name | Description |
+| Table | Description |
 |---|---|
 | AUTHORS | Stores author information |
-| BOOKS | Stores book details, prices, and author and genre references |
 | GENRES | Stores book genre information |
+| BOOKS | Stores book details and prices |
 | CUSTOMERS | Stores customer details |
-| ORDERS | Stores order dates, customer references, and order totals |
+| ORDERS | Stores order dates, customer references, and stored order totals |
 | ORDER_DETAILS | Stores books and quantities associated with each order |
 
-## Project Modules
+## SQL Analysis Performed
 
-### 1. Table Creation and Database Setup
-Creates the bookstore tables and establishes relationships using primary keys and foreign keys.
+### 1. Order Details Analysis
 
-### 2. SQL Queries and Joins
-Uses INNER JOIN and LEFT JOIN to combine customer, order, and book information.
+Combines orders, customers, order details, and books to display order IDs, dates, customer names, email addresses, book titles, quantities, prices, line totals, and stored order totals.
 
-### 3. Sales and Customer Analysis
-Uses aggregate functions such as `COUNT()`, `SUM()`, and `AVG()` with `GROUP BY` and `ORDER BY` to analyze sales and customer spending.
+### 2. Customer Spending Analysis
 
-### 4. Data Validation
-Compares stored order totals with calculated totals derived from order details to verify data consistency.
+Calculates the number of orders, total book units purchased, and total spending for each customer. Results are sorted by spending to identify high-value customers.
 
-### 5. Indexing and Query Performance
-Explores database indexes and uses `EXPLAIN PLAN` and `DBMS_XPLAN` to examine query execution strategies.
+### 3. Monthly Sales Analysis
 
-### 6. Views
-Creates reusable views for book sales, books by author, and customer order history.
+Groups sales by month and calculates the total number of orders, units sold, and sales revenue.
 
-## Analysis Screenshots
+### 4. Top-Selling Books Analysis
 
-### Order Details Analysis
-Displays order IDs, order dates, customer names, email addresses, book titles, quantities, prices, line totals, and order totals.
+Calculates units sold and total sales for each book to identify the best-performing titles.
 
-![Order Details Analysis](screenshots/order_details_analysis.png)
+### 5. Revenue and Business Metrics
 
-### Customer Spending Analysis
-Summarizes the number of orders, total book units purchased, and total spending for each customer.
+Uses aggregate functions such as `COUNT()`, `SUM()`, and `AVG()` to calculate order counts, revenue, and average order value.
 
-![Customer Spending Analysis](screenshots/customer_spending_analysis.png)
+### 6. Data Validation
 
-### Monthly Sales Analysis
-Displays monthly order counts, units sold, and total sales revenue.
+Compares the stored order total with the calculated total from book prices and quantities. A validation status identifies whether the values match.
 
-![Monthly Sales Analysis](screenshots/monthly_sales_analysis.png)
+### 7. Indexing and Query Execution Plans
 
-## Key Findings
-Based on the current sample dataset:
+Examines existing indexes and uses Oracle's execution plan facilities to understand how queries access tables and indexes.
 
-- **Total Orders:** 6
-- **Total Customers with Orders:** 5
-- **Total Units Sold:** 13
-- **Total Sales Revenue:** 4,896
-- **Highest-Spending Customer:** Rahul Sharma, with spending of 1,698
-- **Most-Sold Books:** Several books are tied at 2 units sold each.
+### 8. Constraints
 
-*These results represent the current sample data and are not real-world business statistics.*
-
-## SQL Concepts Demonstrated
-- DDL and DML
-- Primary keys and foreign keys
-- INNER JOIN and LEFT JOIN
-- Aggregate functions
-- GROUP BY and HAVING
-- ORDER BY
-- Subqueries and calculated columns
 
 
 
