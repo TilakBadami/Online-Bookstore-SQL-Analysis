@@ -63,8 +63,71 @@ Compares the stored order total with the calculated total from book prices and q
 
 Examines existing indexes and uses Oracle's execution plan facilities to understand how queries access tables and indexes.
 
-### 8. Constraints
+### 8. Constraints and Relationships
 
+Reviews primary key and foreign key constraints to understand relationships between tables and maintain referential integrity.
 
+## Analysis Screenshots
 
+### Order Details Analysis
 
+Displays order IDs, order dates, customer names, email addresses, book titles, quantities, prices, line totals, and order totals.
+
+![Order Details Analysis](./order_details_analysis.png)
+
+### Customer Spending Analysis
+
+Summarizes the number of orders, total book units purchased, and total spending for each customer.
+
+![Customer Spending Analysis](./customer_spending_analysis.png)
+
+### Monthly Sales Analysis
+
+Displays monthly order counts, units sold, and total sales revenue.
+
+![Monthly Sales Analysis](./monthly_sales_analysis.png)
+
+## Key Findings
+
+Based on the sample dataset currently used in the project:
+
+- **Total orders:** 6
+- **Total customers with orders:** 5
+- **Total units sold:** 13
+- **Total sales revenue:** 4,896
+- **Top-selling book by units sold:** Harry Potter and the Chamber of Secrets
+- **Highest-spending customer:** Rahul Sharma
+- **Order total validation:** All six orders matched their calculated totals in the validation query.
+
+*Note: These findings reflect the current sample data and may change if the database is updated.*
+
+## Skills Demonstrated
+
+- Oracle SQL querying
+- Data retrieval and filtering
+- Multi-table joins
+- Data aggregation and grouping
+- Sales and customer analysis
+- Data validation and reconciliation
+- Index inspection and execution plan analysis
+- Database constraints and relationships
+- Technical documentation using GitHub
+
+## Repository Contents
+
+- `Bookstore_Connection.sql` and related SQL files — SQL scripts created during the project.
+- `bookstore_analysis_today.sql` and `bookstore_analysis_today0.sql` — Additional analysis scripts.
+- `order_details_analysis.png` — Order details analysis screenshot.
+- `customer_spending_analysis.png` — Customer spending analysis screenshot.
+- `monthly_sales_analysis.png` — Monthly sales analysis screenshot.
+- `README.md` — Project documentation.
+
+## Conclusion
+
+This project demonstrates how SQL can be used to analyze bookstore transactions, understand customer spending, measure sales performance, validate financial totals, and explore database performance concepts. It provides practical experience in relational database querying and business-oriented data analysis.
+
+---
+
+**Project Domain:** Retail / Sales Analytics  
+**Database:** Oracle SQL  
+**Author:** Tilak S Badami
