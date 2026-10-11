@@ -1,75 +1,110 @@
-# Online Bookstore Management and Sales Analysis using Oracle SQL
+# Online Bookstore SQL Analysis
 
 ## Project Overview
-
-This project uses Oracle SQL to manage bookstore data and analyze book sales, customer purchases, and order transactions. It demonstrates relational database design, SQL querying, reporting, and data validation.
+The Online Bookstore SQL Analysis project uses Oracle SQL to analyze bookstore transactions, customer purchasing behavior, book sales, and monthly revenue. The project demonstrates practical SQL skills through joins, aggregate functions, views, indexing, execution plans, and data validation.
 
 ## Objectives
+- Analyze customer orders and purchasing patterns.
+- Identify best-selling books and calculate book-wise revenue.
+- Summarize monthly sales performance.
+- Evaluate customer spending and order history.
+- Validate stored order totals against calculated totals.
+- Explore database indexes and query execution plans.
 
-- Organize bookstore information using relational tables.
-- Establish relationships using primary and foreign keys.
-- Retrieve related information using SQL JOINs.
-- Analyze book-wise sales and customer purchasing behavior.
-- Generate monthly sales and revenue reports.
-- Validate order totals and check data integrity.
+## Tools and Technologies
+- **Database:** Oracle Database
+- **SQL Tool:** Oracle SQL Developer
+- **Language:** SQL
 
 ## Database Tables
+The project uses six tables:
 
-The project contains six tables:
+| Table | Description |
+|---|---|
+| `AUTHORS` | Stores author information |
+| `BOOKS` | Stores book details, prices, authors, and genres |
+| `GENRES` | Stores book genre information |
+| `CUSTOMERS` | Stores customer details |
+| `ORDERS` | Stores order dates, customer references, and order totals |
+| `ORDER_DETAILS` | Stores books and quantities associated with each order |
 
-- **AUTHORS** – Author information.
-- **GENRES** – Book genre information.
-- **BOOKS** – Book titles, prices, and related details.
-- **CUSTOMERS** – Customer information.
-- **ORDERS** – Customer order records.
-- **ORDER_DETAILS** – Books and quantities included in each order.
-
-## SQL Concepts Used
-
-- SELECT, WHERE, ORDER BY
-- INNER JOIN and LEFT JOIN
-- GROUP BY and aggregate functions
-- Subqueries
-- Views
+## SQL Concepts Demonstrated
+- DDL and DML statements
 - Primary keys and foreign keys
-- Indexes and execution plans
-- Data validation queries
+- INNER JOIN and LEFT JOIN
+- Aggregate functions: `COUNT()`, `SUM()`, and `AVG()`
+- `GROUP BY`, `HAVING`, and `ORDER BY`
+- Subqueries and calculated columns
+- Views for reusable analysis
+- Index creation and verification
+- `EXPLAIN PLAN` and `DBMS_XPLAN`
+- Data validation and consistency checks
 
-## Key Results
+## Key Analysis
 
-The sample dataset produced the following results:
+### 1. Order Details Analysis
+Combines orders, customers, books, and order details to display customer information, purchased books, quantities, prices, line totals, and order totals.
 
-| Metric | Result |
-|---|---:|
-| Total books | 7 |
-| Total customers | 5 |
-| Total orders | 6 |
-| Units sold | 13 |
-| Total sales revenue | 4,896 |
-| Average order value | 816 |
+![Order Details Analysis](screenshots/order_details_analysis.png)
 
-The validation queries confirmed that stored order totals matched calculated totals and that no orphaned order-detail records were found in the tested dataset.
+### 2. Customer Spending Analysis
+Summarizes total orders, total book units purchased, and total spending for each customer.
 
-## Tools Used
+![Customer Spending Analysis](screenshots/customer_spending_analysis.png)
 
-- Oracle SQL Developer
-- Oracle Database
-- SQL
+### 3. Monthly Sales Analysis
+Summarizes monthly order volume, units sold, and total sales revenue.
 
-## How to Run
+![Monthly Sales Analysis](screenshots/monthly_sales_analysis.png)
 
-1. Open Oracle SQL Developer and connect to the database.
-2. Execute the table creation scripts.
-3. Execute the sample data insertion scripts.
-4. Run the scripts for views, indexes, reports, and validation.
-5. Review the query results in SQL Developer.
+## Key Findings
+Based on the current sample data:
+- **Total orders:** 6
+- **Total customers who placed orders:** 5
+- **Total book units sold:** 13
+- **Total sales revenue:** 4,896
+- **Highest-spending customer:** Rahul Sharma, with total spending of 1,698
+- **Highest-selling books by units:** Multiple books are tied at 2 units each.
 
-Run the scripts in the correct dependency order and ensure that the database connection and required objects are available.
+*Note: These findings reflect the current sample dataset, not a complete real-world bookstore.*
 
-## Author
+## Data Validation
+The project includes checks to compare stored order totals with calculated totals from order-detail records. The validation results show matching totals for the six existing orders.
 
-Tilak S Badami
+Additional checks examine table row counts, primary and foreign key constraints, and potential orphaned records.
 
-Electronics and Communication Engineering graduate | Aspiring Data Analyst
+## Indexing and Query Performance
+The project explores indexes on selected columns and uses Oracle execution plans to inspect how queries access tables and indexes. Execution plans help understand query execution strategies; they do not by themselves prove a performance improvement.
 
-GitHub: https://github.com/TilakBadami
+## Project Structure
+
+```text
+Online-Bookstore-SQL-Analysis/
+├── 01_Table_Creation_and_Sample_Data.sql
+├── 02_Views.sql
+├── 03_Indexes_and_Execution_Plans.sql
+├── 04_Basic_Joins_and_Order_Queries.sql
+├── 05_Sales_and_Customer_Analysis.sql
+├── 06_Data_Validation.sql
+├── screenshots/
+│   ├── order_details_analysis.png
+│   ├── customer_spending_analysis.png
+│   └── monthly_sales_analysis.png
+└── README.md
+```
+
+## How to Run the Project
+1. Install or access an Oracle Database environment and open Oracle SQL Developer.
+2. Connect using a database account with the required permissions.
+3. Run the table creation and sample-data script first.
+4. Execute the remaining SQL scripts in the appropriate order.
+5. Review the query results, validation checks, and execution plans.
+
+**Important:** Run the scripts in a suitable test schema. Review any `DROP`, `DELETE`, or `UPDATE` statements before executing them.
+
+## Skills Demonstrated
+Oracle SQL | Database Management | Data Analysis | SQL Joins | Aggregations | Data Validation | Indexing | Query Execution Plans | Business Reporting
+
+## Conclusion
+This project demonstrates how SQL can transform relational bookstore data into useful information about sales, customers, and purchasing trends while checking data consistency and exploring database query performance.
+
